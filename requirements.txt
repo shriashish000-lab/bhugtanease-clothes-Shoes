@@ -1,0 +1,6 @@
+openpyxl
+et_xmlfile
+python-barcode[images]
+reportlab
+Pillow
+pywin32
