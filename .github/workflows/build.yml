@@ -32,6 +32,14 @@ jobs:
             --icon "app_icon.ico" ^
             --collect-all openpyxl ^
             --collect-all et_xmlfile ^
+            --collect-all barcode ^
+            --collect-all reportlab ^
+            --collect-all PIL ^
+            --hidden-import win32print ^
+            --hidden-import win32ui ^
+            --hidden-import win32con ^
+            --hidden-import pywintypes ^
+            --hidden-import win32timezone ^
             kapda_shoes_billing.pyw
         shell: cmd
 
