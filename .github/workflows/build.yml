@@ -34,10 +34,18 @@ jobs:
       # --collect-all har library ka poora code + data files + hidden imports
       # bundle kar deta hai — isse "sys.executable EXE ko point karta hai"
       # wala pip auto-install fallback issue nahi aata (jo pehle track kiya tha).
+      #
+      # icon.ico repo ke ROOT mein honi chahiye (kapda_shoes_billing.pyw ke
+      # saath). --icon EXE file ka icon set karta hai (Explorer/Desktop mein
+      # dikhta hai); --add-data icon.ico ko EXE ke andar bundle karta hai taaki
+      # software chalte waqt window/taskbar pe bhi wahi logo dikhe
+      # (kapda_shoes_billing.pyw ke set_app_icon() function ko chahiye).
       - name: Build EXE with PyInstaller
         run: >
           pyinstaller --onefile --windowed
           --name KapdaShoesBilling
+          --icon "icon.ico"
+          --add-data "icon.ico;."
           --collect-all openpyxl
           --collect-all reportlab
           --collect-all barcode
